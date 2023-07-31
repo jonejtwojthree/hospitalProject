@@ -1,0 +1,7 @@
+department: 진료과
+doctor: 의사
+medical-record: 이력(진료기록)
+medical-schedule: 진료대기
+medicine: 약
+patient: 환자
+prescription: 처방전
