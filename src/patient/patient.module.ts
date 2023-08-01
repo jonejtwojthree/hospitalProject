@@ -6,4 +6,4 @@ import { PatientService } from './patient.service';
   imports: [],
   providers: [PatientResolver, PatientService],
 })
-export class PrescriptionModule {}
+export class PatientModule {}
