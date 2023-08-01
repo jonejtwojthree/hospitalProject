@@ -1,7 +1,7 @@
 import { Resolver } from '@nestjs/graphql';
-import { PrescriptionService } from './doctor.service';
+import { DoctorService } from './doctor.service';
 
 @Resolver()
-export class PrescriptionResolver {
-  constructor(private prescriptionService: PrescriptionService) {}
+export class DoctorResolver {
+  constructor(private doctorService: DoctorService) {}
 }

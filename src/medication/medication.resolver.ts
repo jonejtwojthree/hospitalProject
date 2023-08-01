@@ -3,5 +3,5 @@ import { MedicationService } from './medication.service';
 
 @Resolver()
 export class MedicationResolver {
-  constructor(private prescriptionService: MedicationService) {}
+  constructor(private medicationService: MedicationService) {}
 }
