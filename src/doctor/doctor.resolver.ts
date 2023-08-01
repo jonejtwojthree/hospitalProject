@@ -1,5 +1,5 @@
 import { Resolver } from '@nestjs/graphql';
-import { PrescriptionService } from './prescription.service';
+import { PrescriptionService } from './doctor.service';
 
 @Resolver()
 export class PrescriptionResolver {

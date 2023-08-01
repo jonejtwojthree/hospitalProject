@@ -16,10 +16,10 @@ export class Prescription {
   @Column()
   opinion: string;
 
+  @OneToMany(() => Medication, (medication) => medication.prescription)
+  medication: Medication[];
+
   @OneToOne(() => Doctor)
   @JoinColumn()
   doctor: Doctor;
-
-  @OneToMany(() => Medication, (medication) => medication.prescription)
-  medication: Medication[];
 }

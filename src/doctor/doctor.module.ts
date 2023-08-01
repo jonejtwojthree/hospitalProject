@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
-import { PrescriptionResolver } from './prescription.resolver';
-import { PrescriptionService } from './prescription.service';
+import { PrescriptionResolver } from './doctor.resolver';
+import { PrescriptionService } from './doctor.service';
 
 @Module({
   imports: [],

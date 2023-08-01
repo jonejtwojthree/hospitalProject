@@ -1,12 +1,4 @@
-import {
-  Entity,
-  Column,
-  PrimaryGeneratedColumn,
-  OneToOne,
-  JoinColumn,
-  ManyToOne,
-} from 'typeorm';
-import { Prescription } from 'src/prescription/entities/prescription.entity';
+import { Entity, Column, PrimaryGeneratedColumn, ManyToOne } from 'typeorm';
 import { Department } from 'src/department/entities/department.entity';
 @Entity()
 export class Doctor {
@@ -19,7 +11,6 @@ export class Doctor {
   @Column()
   history: [string];
 
-  @OneToOne(() => Department)
-  @JoinColumn()
+  @ManyToOne(() => Department, (department) => department.doctor)
   department: Department;
 }
