@@ -32,7 +32,7 @@ import { PrescriptionModule } from './apis//prescription/prescription.module';
     //
     GraphQLModule.forRoot<ApolloDriverConfig>({
       driver: ApolloDriver,
-      autoSchemaFile: 'src/schema/schema.gql',
+      autoSchemaFile: 'src/commons/graphql/schema.gql',
     }),
 
     //

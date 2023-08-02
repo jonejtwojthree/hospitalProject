@@ -4,9 +4,11 @@ import {
   PrimaryGeneratedColumn,
   OneToOne,
   JoinColumn,
+  ManyToMany,
+  JoinTable,
   OneToMany,
 } from 'typeorm';
-import { Field, Int, ObjectType } from '@nestjs/graphql';
+import { Field, ObjectType } from '@nestjs/graphql';
 
 import { Doctor } from 'src/apis/doctor/entities/doctor.entity';
 import { Medication } from 'src/apis/medication/entities/medication.entity';
@@ -29,4 +31,9 @@ export class Prescription {
   @JoinColumn()
   @Field(() => Doctor)
   doctor: Doctor;
+
+  @ManyToMany(() => Medication)
+  @JoinTable()
+  @Field(() => Medication)
+  medication: Medication[];
 }

@@ -1,0 +1,60 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Patient {
+  id: String!
+  name: String!
+  jumin: String!
+  age: String!
+  address: String!
+  medicalRecord: MedicalRecord!
+}
+
+type Medication {
+  id: String!
+  name: String!
+}
+
+type MedicalRecord {
+  id: String!
+  date: DateTime!
+  consult: String!
+  patient: Patient!
+  doctor: Doctor!
+  department: Department!
+}
+
+"""
+A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
+"""
+scalar DateTime
+
+type MedicalSchedule {
+  id: String!
+  date: DateTime!
+  symptom: String!
+  department: Department!
+  patient: Patient!
+  doctor: Doctor!
+}
+
+type Doctor {
+  id: String!
+  name: String!
+  department: Department!
+  medicalRecord: MedicalRecord!
+  medicalSchedule: MedicalSchedule!
+}
+
+type Department {
+  id: String!
+  name: String!
+  doctor: Doctor!
+  medicalRecord: MedicalRecord!
+  medicalSchedule: MedicalSchedule!
+}
+
+type Query {
+  test: String!
+}

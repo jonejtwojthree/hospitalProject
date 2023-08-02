@@ -1,4 +1,8 @@
 import { Injectable } from '@nestjs/common';
 
 @Injectable()
-export class PatientService {}
+export class PatientService {
+  test(): string {
+    return 'PatientService';
+  }
+}

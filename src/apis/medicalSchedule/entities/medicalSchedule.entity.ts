@@ -4,6 +4,7 @@ import {
   PrimaryGeneratedColumn,
   OneToOne,
   JoinColumn,
+  ManyToOne,
 } from 'typeorm';
 import { Field, Int, ObjectType } from '@nestjs/graphql';
 import { Department } from 'src/apis/department/entities/department.entity';
@@ -25,8 +26,8 @@ export class MedicalSchedule {
   @Field(() => String)
   symptom: string;
 
-  @OneToOne(() => Department)
-  @JoinColumn()
+  @ManyToOne(() => Department, (department) => department.medicalSchedule)
+  @Field(() => Department)
   department: Department;
 
   @OneToOne(() => Patient)
@@ -34,8 +35,7 @@ export class MedicalSchedule {
   @Field(() => Patient)
   patient: Patient;
 
-  @OneToOne(() => Doctor)
-  @JoinColumn()
+  @ManyToOne(() => Doctor, (doctor) => doctor.medicalSchedule)
   @Field(() => Doctor)
   doctor: Doctor;
 }
