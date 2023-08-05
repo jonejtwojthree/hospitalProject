@@ -56,5 +56,23 @@ type Department {
 }
 
 type Query {
+  findOne_Department(findOneDepartmentInput: FindOneDepartmentInput!): Department!
+  findAll_Department: [Department!]!
   test: String!
+  findOne_Doctor(name: String!): Doctor!
+  findAll_Doctor: [Doctor!]!
+}
+
+input FindOneDepartmentInput {
+  name: String!
+}
+
+type Mutation {
+  create_Department(createDepartmentInput: CreateDepartmentInput!): Department!
+  delete_Department(name: String!): String!
+  create_Doctor(name: String!, departmentName: String!): Doctor!
+}
+
+input CreateDepartmentInput {
+  name: String!
 }

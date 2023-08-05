@@ -9,7 +9,7 @@ import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
 //////////////////////////////////////////////
 // schema
 
-import { Department } from './apis/department/entities/department.entity';
+import { DepartmentModule } from './apis/department/department.module';
 import { HospitalModule } from './apis//hospital/hospital.module';
 import { DoctorModule } from './apis//doctor/doctor.module';
 import { MedicalRecordModule } from './apis//medicalRecord/medicalRecord.module';
@@ -17,10 +17,11 @@ import { MedicalScheduleModule } from './apis//medicalSchedule/medicalSchedule.m
 import { MedicationModule } from './apis//medication/medication.module';
 import { PatientModule } from './apis//patient/patient.module';
 import { PrescriptionModule } from './apis//prescription/prescription.module';
+import { Department } from './apis/department/entities/department.entity';
 
 @Module({
   imports: [
-    Department,
+    DepartmentModule,
     DoctorModule,
     HospitalModule,
     MedicalRecordModule,
