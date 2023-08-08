@@ -14,10 +14,10 @@ export class DoctorResolver {
     return await this.doctorService.create_Doctor({ name, departmentName });
   }
 
-  // @Mutation(() => String)
-  // delete_Department(@Args('name') name: string): Promise<string> {
-  //   return this.departmentService.delete_Department({ name });
-  // }
+  @Mutation(() => String)
+  delete_Doctor(@Args('name') name: string): Promise<string> {
+    return this.doctorService.delete_Doctor({ name });
+  }
 
   @Query(() => Doctor)
   findOne_Doctor(@Args('name') name: string): Promise<Doctor> {

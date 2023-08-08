@@ -45,6 +45,7 @@ export class DepartmentService {
     }
     return `${name} 지워짐`;
   }
+
   async findOne_Department({
     findOneDepartmentInput,
   }: IDepartmentFindOne): Promise<Department | null> {

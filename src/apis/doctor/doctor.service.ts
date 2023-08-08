@@ -30,12 +30,30 @@ export class DoctorService {
     });
   }
 
+  async delete_Doctor({ name }): Promise<string> {
+    const hasDepartment = await this.findOne_Doctor({
+      name,
+    });
+    const id = hasDepartment.id;
+    const result = await this.doctorRepository.delete(id);
+
+    if (result.affected === 0) {
+      return `${name} 안 지워짐`;
+    }
+    return `${name} 지워짐`;
+  }
+
   async findOne_Doctor({ name }: IDoctorFindOne): Promise<Doctor> {
-    return await this.doctorRepository.findOne({ where: { name } });
+    return await this.doctorRepository.findOne({
+      where: { name },
+      relations: ['department'],
+    });
   }
 
   async findAll_Doctor(): Promise<Doctor[]> {
-    return await this.doctorRepository.find();
+    return await this.doctorRepository.find({
+      relations: ['department'],
+    });
   }
 
   test(): string {
